@@ -13,7 +13,6 @@ namespace task.Controllers
         private readonly AppDbContext _db;
         public CourceController(AppDbContext db) => _db = db;
 
-        // GET: api/cource
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -30,7 +29,6 @@ namespace task.Controllers
             return Ok(courses);
         }
 
-        // POST: api/cource
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CourceCreateDto dto)
         {
@@ -47,3 +45,4 @@ namespace task.Controllers
         }
     }
 }
+
