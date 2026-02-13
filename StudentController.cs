@@ -11,7 +11,6 @@ namespace task.Controllers
         private readonly StudentRepository _repo;
         public StudentController(StudentRepository repo) => _repo = repo;
 
-        // GET: api/student?search=afrah&courceId=1&pageNumber=1&pageSize=10
         [HttpGet]
         public async Task<IActionResult> GetAll(
             [FromQuery] string? search,
@@ -31,7 +30,6 @@ namespace task.Controllers
             });
         }
 
-        // GET: api/student/5
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -40,7 +38,6 @@ namespace task.Controllers
             return Ok(student);
         }
 
-        // POST: api/student
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] StudentCreateDto dto)
         {
@@ -50,7 +47,6 @@ namespace task.Controllers
             return CreatedAtAction(nameof(GetById), new { id = result.NewId }, new { id = result.NewId });
         }
 
-        // PUT: api/student/5
         [HttpPut("{id:int}")]
         public async Task<IActionResult> Update(int id, [FromBody] StudentUpdateDto dto)
         {
@@ -60,7 +56,6 @@ namespace task.Controllers
             return NoContent();
         }
 
-        // DELETE: api/student/5
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> Delete(int id)
         {
@@ -71,3 +66,4 @@ namespace task.Controllers
         }
     }
 }
+
