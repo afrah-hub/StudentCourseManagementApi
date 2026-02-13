@@ -16,12 +16,10 @@ namespace task.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Unique Email
             modelBuilder.Entity<Student>()
                 .HasIndex(s => s.Email)
                 .IsUnique();
 
-            // Relationship: Cource (1) -> Students (many)
             modelBuilder.Entity<Student>()
                 .HasOne(s => s.Cource)
                 .WithMany(c => c.Students)
@@ -30,3 +28,4 @@ namespace task.Data
         }
     }
 }
+
