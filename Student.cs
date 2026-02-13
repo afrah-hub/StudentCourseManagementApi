@@ -21,7 +21,6 @@ namespace task.Model
         [Required, Phone, StringLength(20)]
         public string Phone { get; set; } = string.Empty;
 
-        // ⚠️ Real apps store PasswordHash, not Password
         [Required, StringLength(100, MinimumLength = 6)]
         public string Password { get; set; } = string.Empty;
 
@@ -31,3 +30,4 @@ namespace task.Model
         public Cource? Cource { get; set; }
     }
 }
+
